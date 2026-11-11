@@ -1,0 +1,15 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"login": true,
+	"steps": [
+		{
+			"step": "activateTheme",
+			"themeFolderName": "tidewater-plumbing"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require_once '/wordpress/wp-load.php'; require get_stylesheet_directory() . '/playground/setup.php';"
+		}
+	]
+}

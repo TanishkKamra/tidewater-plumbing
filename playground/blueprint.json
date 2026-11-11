@@ -1,0 +1,31 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Tidewater Plumbing",
+		"description": "Custom block theme for a fictional Brisbane plumbing and gasfitting business. Design sample by Tanishk Kamra.",
+		"author": "TanishkKamra"
+	},
+	"landingPage": "/",
+	"login": true,
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/TanishkKamra/tidewater-plumbing",
+				"ref": "main"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require_once '/wordpress/wp-load.php'; require get_stylesheet_directory() . '/playground/setup.php';"
+		}
+	]
+}
