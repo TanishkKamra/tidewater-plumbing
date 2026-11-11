@@ -98,6 +98,7 @@ With `prefers-reduced-motion: reduce`, smooth scrolling is off, the flip never r
 - **The board computes the slot in the browser,** so a cached page never shows a stale time. Brisbane has no daylight saving, and `Intl` handles the time zone.
 - **The hero's call button comes before the booking button:** an emergency visitor should not have to choose.
 - **The yellow "Book a plumber" button stays in the header down to 600 px.** From 600 to 781 px the "Service area" link gives way to it, so the header holds one line with a booking route at every width. Below 600 px the menu overlay carries both Book and Call.
+- **The footer's four columns pair up two by two from 782 to 1279 px.** Below 1280 px a quarter of the row is narrower than the email address, so it would wrap; two by two keeps every link on one line.
 - **The service-area table shows typical night and weekend arrival times with "not a promise",** honest framing a real business could stand behind.
 - **No reviews, ratings, logos or counts:** none exist for a fictional business, and inventing them would undercut the trust the site is built on.
 
