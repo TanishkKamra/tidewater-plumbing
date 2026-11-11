@@ -30,7 +30,7 @@
 
 <!-- wp:navigation-link {"label":"Hot water","url":"<?php echo esc_url( home_url( '/hot-water/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 
-<!-- wp:navigation-link {"label":"Service area","url":"<?php echo esc_url( home_url( '/#service-area' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+<!-- wp:navigation-link {"label":"Service area","url":"<?php echo esc_url( home_url( '/#service-area' ) ); ?>","kind":"custom","isTopLevelLink":true,"className":"tw-hide-md"} /-->
 
 <!-- wp:navigation-link {"label":"Book a plumber","url":"<?php echo esc_url( home_url( '/book/' ) ); ?>","kind":"custom","className":"tw-nav-mobile","isTopLevelLink":true} /-->
 

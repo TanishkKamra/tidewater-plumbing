@@ -8,7 +8,7 @@ const source = readFileSync( new URL( '../assets/js/site.js', import.meta.url ),
 const context = { document: { querySelectorAll: () => [], querySelector: () => null }, Intl };
 vm.createContext( context );
 vm.runInContext( source, context );
-const { nextSlot } = context;
+const { nextSlot } = context.tidewaterPlumbing;
 
 const MON = 1;
 const SAT = 6;
@@ -33,7 +33,7 @@ for ( const [ label, day, minutes, expected ] of cases ) {
 }
 
 // Brisbane is UTC+10 all year (Queensland has no daylight saving).
-const { brisbaneNow } = context;
+const { brisbaneNow } = context.tidewaterPlumbing;
 const clock = [
 	[ 'November, midnight UTC', '2026-11-11T00:00:00Z', { day: 3, minutes: 600 } ],
 	[ 'January, when Sydney is on daylight time', '2026-01-15T22:30:00Z', { day: 5, minutes: 510 } ],

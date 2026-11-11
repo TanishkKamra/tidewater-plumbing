@@ -288,15 +288,27 @@ a[href^="sms:"] {
 	text-transform: uppercase;
 }
 
-/* Between 600 and 781 px the full menu shows, so the header button steps aside. */
 @media (max-width: 781px) {
-	.tw-topbar .tw-hide-sm,
-	.wp-block-buttons.tw-header-cta {
+	.tw-topbar .tw-hide-sm {
 		display: none;
 	}
 
 	.tw-topbar {
 		justify-content: flex-end;
+	}
+}
+
+/* Below 600 px the menu overlay carries the Book link, so the button goes. */
+@media (max-width: 599px) {
+	.wp-block-buttons.tw-header-cta {
+		display: none;
+	}
+}
+
+/* From 600 to 781 px "Service area" makes room for the Book button. */
+@media (min-width: 600px) and (max-width: 781px) {
+	.tw-nav .tw-hide-md {
+		display: none;
 	}
 }
 
@@ -854,8 +866,15 @@ a[href^="sms:"] {
 	font-size: var(--wp--preset--font-size--small);
 }
 
+/* Kept in the accessibility tree while empty, so the first message is announced. */
 .tw-form-status:empty {
-	display: none;
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	overflow: hidden;
+	padding: 0;
+	border: 0;
+	clip-path: inset(50%);
 }
 
 .tw-form-status {

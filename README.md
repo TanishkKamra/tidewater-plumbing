@@ -12,7 +12,7 @@ A block theme for Tidewater Plumbing, a fictional plumbing and gasfitting busine
 - **Templates.** Front page, a no-title landing page template, singular, index and 404, with header and footer template parts.
 - **Two inner pages.** A hot water page with checks to try before calling, and a booking page with a demo form. The form uses native validation; answering "yes" to "Is water or gas leaking right now?" shows a "please call instead" note. On a live site it would post to the client's form plugin or a small REST endpoint.
 - **Accessibility.** Landmarks and a skip link, a logical heading order, visible focus styles, labelled form fields with large tap targets, and motion that respects `prefers-reduced-motion`. axe finds no serious or critical issues.
-- **Performance.** Seven WebP photos between 24 and 136 KB, the two most-used font files preloaded, the hero image fetched first and the rest lazy-loaded, one 3.5 KB script, and no jQuery or emoji script.
+- **Performance.** Seven WebP photos between 24 and 136 KB, the two most-used font files preloaded, the hero image fetched first and the rest lazy-loaded, one 4 KB script, and no jQuery or emoji script.
 
 ## Run it locally
 
@@ -39,6 +39,8 @@ node tests/next-slot.test.mjs
 1. Copy this folder to `wp-content/themes/tidewater-plumbing` (WordPress 6.6 or later).
 2. Activate it under Appearance, Themes.
 3. Create pages with the slugs `hot-water` and `book`, choose the "Landing page (no title)" template, and insert the "Page: hot water" and "Page: book a plumber" patterns.
+
+The booking form sits in a Custom HTML block. WordPress strips form fields from that block when a user without the `unfiltered_html` capability saves the page, which includes everyone except Super Admins on multisite. On those sites, have a Super Admin save the Book page, or swap the demo form for the client's form plugin.
 
 ## Structure
 

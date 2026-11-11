@@ -74,6 +74,12 @@ function tidewater_plumbing_image_loading( $html, $block ) {
 		return $html;
 	}
 
+	// Leave media-library images to WordPress's own loading heuristics.
+	$src = $tags->get_attribute( 'src' );
+	if ( ! is_string( $src ) || 0 !== strpos( $src, get_theme_file_uri( 'assets/images/' ) ) ) {
+		return $html;
+	}
+
 	$class_name = isset( $block['attrs']['className'] ) ? $block['attrs']['className'] : '';
 	if ( false !== strpos( $class_name, 'tw-hero-image' ) ) {
 		$tags->set_attribute( 'fetchpriority', 'high' );

@@ -89,7 +89,7 @@ With `prefers-reduced-motion: reduce`, smooth scrolling is off, the flip never r
 | Form field | Booking form | Default, focus ring, required (native validation message) | Every text, phone, email, select and textarea input |
 | Chip (radio) | Booking form | Default, hover, checked (yellow fill), keyboard focus (ring on the chip) | Picking one short option |
 | Urgent note | Booking form | Hidden, then shown and announced when "leaking: yes" is picked | Redirecting an emergency away from the booking form |
-| Form status | Booking form | Empty and hidden; after submit, a thank-you line announced by `role="status"` | Confirming the request |
+| Form status | Booking form | Empty: visually hidden but kept for screen readers; after submit, a thank-you line announced by `role="status"` | Confirming the request |
 | Header and mobile menu | Every page | Desktop: links with yellow underline on hover; mobile: full-screen menu with a yellow call link last | Site navigation |
 
 ## Decisions and reasons
@@ -97,7 +97,7 @@ With `prefers-reduced-motion: reduce`, smooth scrolling is off, the flip never r
 - **Graphite and safety yellow,** not the usual plumber blue: it reads as "trade" at thumbnail size and gives the call button the strongest contrast on the page.
 - **The board computes the slot in the browser,** so a cached page never shows a stale time. Brisbane has no daylight saving, and `Intl` handles the time zone.
 - **The hero's call button comes before the booking button:** an emergency visitor should not have to choose.
-- **The header CTA hides below 782 px** and the mobile menu carries the call link instead, so the header never crowds at tablet widths.
+- **The yellow "Book a plumber" button stays in the header down to 600 px.** From 600 to 781 px the "Service area" link gives way to it, so the header holds one line with a booking route at every width. Below 600 px the menu overlay carries both Book and Call.
 - **The service-area table shows typical night and weekend arrival times with "not a promise",** honest framing a real business could stand behind.
 - **No reviews, ratings, logos or counts:** none exist for a fictional business, and inventing them would undercut the trust the site is built on.
 
